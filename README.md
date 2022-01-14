@@ -1,3 +1,6 @@
+## NOTE
+Run this command if you're changing the theme frequently: `docker run -p 8888:8888 -t -i -v $PWD/settings/:/usr/src/app/settings/ audiogram`
+
 # Audiogram
 
 [![Build Status](https://travis-ci.org/nypublicradio/audiogram.svg?branch=alpha)](https://travis-ci.org/nypublicradio/audiogram)
