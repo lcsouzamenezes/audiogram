@@ -1,21 +1,20 @@
 var d3 = require("d3"),
-    patterns = require("./patterns.js"),
-    textWrapper = require("./text-wrapper.js");
+  patterns = require("./patterns.js"),
+  textWrapper = require("./text-wrapper.js");
 
-module.exports = function(t) {
-
+module.exports = function (t) {
   var renderer = {},
-      backgroundImage,
-      wrapText,
-      theme;
+    backgroundImage,
+    wrapText,
+    theme;
 
-  renderer.backgroundImage = function(_) {
+  renderer.backgroundImage = function (_) {
     if (!arguments.length) return backgroundImage;
     backgroundImage = _;
     return this;
   };
 
-  renderer.theme = function(_) {
+  renderer.theme = function (_) {
     if (!arguments.length) return theme;
 
     theme = _;
@@ -37,8 +36,7 @@ module.exports = function(t) {
   };
 
   // Draw the frame
-  renderer.drawFrame = function(context, options){
-
+  renderer.drawFrame = function (context, options) {
     context.patternQuality = "best";
 
     // Draw the background image and/or background color
@@ -55,21 +53,20 @@ module.exports = function(t) {
 
     // Write the caption
     if (options.caption) {
-      wrapText(context, options.caption, 'caption');
+      wrapText(context, options.caption, "caption");
     }
 
     // Write the citation
     if (options.citation) {
-      wrapText(context, options.citation, 'citation');
+      wrapText(context, options.citation, "citation");
     }
 
     // Write the label
     if (options.label) {
-      wrapText(context, options.label, 'label');
+      wrapText(context, options.label, "label");
     }
 
     return this;
-
   };
 
   if (t) {
@@ -77,5 +74,4 @@ module.exports = function(t) {
   }
 
   return renderer;
-
-}
+};

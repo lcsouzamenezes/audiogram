@@ -21,19 +21,67 @@ var env = process.env.NODE_ENV || "development";
 
 module.exports = {
   workingDirectory: path.join(__dirname, "..", "tmp"),
-  storagePath: (env === "development") ? path.join(__dirname, "..", "media") : "applications/audiogram/media",
+  storagePath:
+    env === "development"
+      ? path.join(__dirname, "..", "media")
+      : "applications/audiogram/media",
   s3Bucket: process.env.S3_BUCKETS_NAME,
   fonts: [
-    { family: "NYT Franklin", file: path.join(__dirname, "fonts", "NYTFranklinMedium.otf") },
-    { family: "NYT Franklin Light", file: path.join(__dirname, "fonts", "NYTFranklinLight.otf") },
-    { family: "NYT Franklin Bold", file: path.join(__dirname, "fonts", "NYTFranklinBold.otf") },
-    { family: "NYT Karnak", file: path.join(__dirname, "fonts", "NYTKarnakText.otf") },
-    { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Regular.ttf") },
-    { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Light.ttf"), weight: 300 },
-    { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Bold.ttf"), weight: "bold" },
-    { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Italic.ttf"), style: "italic" },
-    { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-BoldItalic.ttf"), weight: "bold", style: "italic" }
+    {
+      family: "NYT Franklin",
+      file: path.join(__dirname, "fonts", "NYTFranklinMedium.otf"),
+    },
+    {
+      family: "NYT Franklin Light",
+      file: path.join(__dirname, "fonts", "NYTFranklinLight.otf"),
+    },
+    {
+      family: "NYT Franklin Bold",
+      file: path.join(__dirname, "fonts", "NYTFranklinBold.otf"),
+    },
+    {
+      family: "NYT Karnak",
+      file: path.join(__dirname, "fonts", "NYTKarnakText.otf"),
+    },
+    {
+      family: "Source Sans Pro",
+      file: path.join(__dirname, "fonts", "SourceSansPro-Regular.ttf"),
+    },
+    {
+      family: "Source Sans Pro",
+      file: path.join(__dirname, "fonts", "SourceSansPro-Light.ttf"),
+      weight: 300,
+    },
+    {
+      family: "Source Sans Pro",
+      file: path.join(__dirname, "fonts", "SourceSansPro-Bold.ttf"),
+      weight: "bold",
+    },
+    {
+      family: "Source Sans Pro",
+      file: path.join(__dirname, "fonts", "SourceSansPro-Italic.ttf"),
+      style: "italic",
+    },
+    {
+      family: "Ubuntu",
+      file: path.join(__dirname, "fonts", "Ubuntu-Regular.ttf"),
+    },
+    {
+      family: "Ubuntu",
+      file: path.join(__dirname, "fonts", "Ubuntu-Light.ttf"),
+      weight: "light",
+    },
+    {
+      family: "Ubuntu",
+      file: path.join(__dirname, "fonts", "Ubuntu-Medium.ttf"),
+      weight: "medium",
+    },
+    {
+      family: "Ubuntu",
+      file: path.join(__dirname, "fonts", "Ubuntu-Bold.ttf"),
+      weight: "bold",
+    },
   ],
   redisHost: process.env.REDIS_URI,
-  worker: (env === "development") ? false : true
+  worker: env === "development" ? false : true,
 };

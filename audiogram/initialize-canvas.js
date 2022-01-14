@@ -20,7 +20,7 @@ function initializeCanvas(theme, cb) {
       "backgrounds",
       theme.backgroundImage
     ),
-    function(err, raw) {
+    function (err, raw) {
       if (err) {
         return cb(err);
       }

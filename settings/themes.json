@@ -1,92 +1,63 @@
 {
   "default": {
-    "width": 1000,
-    "height": 560,
-    "framesPerSecond": 20,
     "maxDuration": 300,
-    "samplesPerFrame": 128,
     "pattern": "halfbars",
-    "waveTop": 150,
-    "waveBottom": 710,
     "captionAlign": "left",
-    "captionTop": 70,
-    "captionLeft": 50,
-    "captionRight": 860,
-    "captionFont": "300 68px 'NYT Franklin Light'",
-    "captionLineHeight": 76,
-    "captionLineSpacing": 7,
     "citationAlign": "left",
-    "citationFont": "300 38px 'NYT Franklin Light'",
     "citationTopMargin": 32,
     "citationTop": 342,
-    "citationLeft": 50,
-    "citationRight": 890,
     "citationMaxBottom": 390,
-    "citationLineHeight": 38,
     "citationLineSpacing": 7,
-    "labelFont": "44px 'NYT Karnak'",
+    "labelFont": "44px 'NYT Franklin Light'",
     "labelAlign": "left",
     "labelTop": 470,
     "labelLeft": 70,
     "labelLineHeight": 20,
-    "labelLineSpacing": 4
+    "labelLineSpacing": 4,
+    "backgroundColor": "#0a0038",
+    "foregroundColor": "rgba(255, 255, 255, 1)",
+    "width": 1000,
+    "height": 1000,
+    "framesPerSecond": 20,
+    "samplesPerFrame": 55,
+    "waveTop": 0,
+    "backgroundImage": "unforgettable_icon_white_whole.png",
+    "waveBottom": 1000,
+    "captionTop": 100,
+    "captionLeft": 50,
+    "captionRight": 800,
+    "captionFont": "bold 110px 'Ubuntu'",
+    "captionLineHeight": 110,
+    "captionLineSpacing": 4,
+    "citationLeft": 150,
+    "citationRight": 750,
+    "citationFont": "70px 'Ubuntu'",
+    "citationLineHeight": 70
   },
-  "NYT Light": {
-    "waveColor": "#d9d9d9",
-    "foregroundColor": "#000",
-    "citationColor": "#000",
-    "backgroundImage": "t_logo_light.png",
-    "labelColor": "#000"
+  "red": {
+    "backgroundColor": "#38000a"
   },
-  "NYT Dark": {
-    "backgroundColor": "#000",
-    "waveColor": "#4d4d4d",
-    "foregroundColor": "#fff",
-    "citationColor": "#fff",
-    "backgroundImage": "t_logo_dark.png",
-    "labelColor": "#fff"
+  "orange": {
+    "backgroundColor": "#ff7b00"
   },
-  "Still Processing": {
-    "waveColor": "rgba(102, 80, 62, 0.25)",
-    "foregroundColor": "#66503e",
-    "citationColor": "#66503e",
-    "backgroundColor": "#f4d7b9",
-    "backgroundImage": "t_logo_white_alpha.png",
-    "labelColor": "#fff",
-    "labelText": "Still Processing"
+  "yellow": {
+    "backgroundColor": "#f5e31d"
   },
-  "The Daily": {
-    "waveColor": "rgba(102, 102, 102, 0.25)",
-    "foregroundColor": "#fff",
-    "citationColor": "#fff",
-    "backgroundColor": "#f4d7b9",
-    "backgroundImage": "the_daily_audiogram_background.png",
-    "labelColor": "#fff",
-    "labelText": "The Daily"
+  "green": {
+    "backgroundColor": "#003802"
   },
-  "Dear Sugars": {
-    "waveColor": "rgba(255, 255, 255, 0.35)",
-    "foregroundColor": "rgba(0, 0, 0, 0.9)",
-    "citationColor": "rgba(0, 0, 0, 0.9)",
-    "backgroundColor": "#91d2d2",
-    "backgroundImage": "t_logo_dearsugars.png",
-    "labelColor": "rgba(0, 0, 0, 0.9)",
-    "labelText": "Dear Sugars"
+  "blue": {
+    "backgroundColor": "#0a0038"
   },
-  "The Choice": {
-    "waveColor": "rgba(255, 255, 255, 0.50)",
-    "foregroundColor": "#fff",
-    "citationColor": "#fff",
-    "backgroundColor": "#f4d7b9",
-    "backgroundImage": "the-choice.jpg",
-    "labelColor": "#fff",
-    "labelText": "The Choice"
+  "purple": {
+    "backgroundColor": "#380033"
   },
-  "Science": {
-    "waveColor": "#d9d9d9",
-    "foregroundColor": "#000",
-    "citationColor": "#000",
-    "backgroundImage": "science_why_do_bees_buzz.jpg",
-    "labelColor": "#000"
+  "black": {
+    "backgroundColor": "#000000"
+  },
+  "white": {
+    "backgroundColor": "#ffffff",
+    "foregroundColor": "#000000",
+    "backgroundImage": "unforgettable_icon_black_whole.png"
   }
 }

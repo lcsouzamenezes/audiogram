@@ -1,19 +1,21 @@
 var minimap = require("./minimap.js"),
-    d3 = require("d3");
+  d3 = require("d3");
 
 var audio = document.querySelector("audio"),
-    extent = [0, 1];
+  extent = [0, 1];
 
 // timeupdate is too low-res
 d3.timer(update);
 
-d3.select(audio).on("play", toggled)
-  .on("pause", function(){ toggled(true); });
+d3.select(audio)
+  .on("play", toggled)
+  .on("pause", function () {
+    toggled(true);
+  });
 
 minimap.onBrushEnd(_extent);
 
 function pause(time) {
-
   if (arguments.length) {
     audio.currentTime = time;
   }
@@ -23,11 +25,9 @@ function pause(time) {
   }
 
   toggled(true);
-
 }
 
 function play(time) {
-
   if (arguments.length) {
     audio.currentTime = time;
   }
@@ -35,7 +35,6 @@ function play(time) {
   audio.play();
 
   toggled();
-
 }
 
 function restart() {
@@ -43,20 +42,20 @@ function restart() {
 }
 
 function update() {
-
   if (audio.duration) {
-
     var pos = audio.currentTime / audio.duration;
 
     // Need some allowance at the beginning because of frame imprecision (esp. FF)
-    if (audio.ended || pos >= extent[1] || audio.duration * extent[0] - audio.currentTime > 0.2) {
+    if (
+      audio.ended ||
+      pos >= extent[1] ||
+      audio.duration * extent[0] - audio.currentTime > 0.2
+    ) {
       pause(extent[0] * audio.duration);
     }
 
     minimap.time(pos);
-
   }
-
 }
 
 function toggled(paused) {
@@ -73,41 +72,42 @@ function toggle() {
 }
 
 function _extent(_) {
-
   if (arguments.length) {
-
     extent = _;
 
     var pos = audio.currentTime / audio.duration;
 
-    if (pos > extent[1] || audio.duration * extent[0] - audio.currentTime > 0.2 || !isPlaying()) {
+    if (
+      pos > extent[1] ||
+      audio.duration * extent[0] - audio.currentTime > 0.2 ||
+      !isPlaying()
+    ) {
       pause(extent[0] * audio.duration);
     }
 
     minimap.time(pos);
-
   } else {
     return extent;
   }
 }
 
 function src(file, cb) {
-
   d3.select("audio")
     .on("canplaythrough", cb)
-    .on("error", function(){
+    .on("error", function () {
       cb(d3.event.target.error);
     })
     .select("source")
-      .attr("type", file.type)
-      .attr("src", URL.createObjectURL(file));
+    .attr("type", file.type)
+    .attr("src", URL.createObjectURL(file));
 
   audio.load();
-
 }
 
 function isPlaying() {
-  return audio.duration && !audio.paused && !audio.ended && 0 < audio.currentTime;
+  return (
+    audio.duration && !audio.paused && !audio.ended && 0 < audio.currentTime
+  );
 }
 
 function _duration() {
@@ -120,5 +120,5 @@ module.exports = {
   toggle: toggle,
   src: src,
   restart: restart,
-  duration: _duration
+  duration: _duration,
 };
